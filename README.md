@@ -1,1 +1,1 @@
-# JOG_GM97
+# JOG_FirnDensificationIn2D_GM97

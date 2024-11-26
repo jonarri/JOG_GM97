@@ -1,5 +1,5 @@
 
-This code is part of the supplementary materials of the *Journal of Glaciology* article titled:
+These codes are part of the supplementary materials of the *Journal of Glaciology* article titled:
 
 
 
@@ -16,3 +16,12 @@ Arrizabalaga-Iriarte J, Lejonagoitia-Garmendia L, Hvidberg CS, Grinsted A, Rathm
 In the numerical experiments that follow, we solved the coupled density, momentum, and thermal problem using *FEniCS* (Logg and others, 2012), relying on Newton's method to solve nonlinearities. For reasons explained in the article, the ice-stream scenario is not thermally coupled, but the mechanical problem is solved using the same method. The Jacobian of the residual forms (required for Newton iterations) were calculated using the unified form language (UFL) (Alnaes and others, 2015), used by *FEniCS* to specify weak forms of PDEs, which supports automatic symbolic differentiation. All weak forms are presented in Appendix A. For our two-dimensional experiments, meshes were constructed using *gmsh* (Geuzaine and Remacle, 2009) and updated between time-steps to evolve both interior and exterior free-surface boundary.
 
 
+All the datasets used as reference and initial and boundary conditions are publicly available, but they need to be downloaded from their owners and properly pathed before running these codes.
+
+- 1D Firn core density profiles -----> Bréant and others (2017)
+- NEEM firn tunnel initial dimensions -----> technical report, Steffensen (2014), but we provide the initial condition mesh we used
+- NEEM 2012--2014 temperature record -----> GCnet, Vandecrux and others (2023)
+- NEGIS transect velocity field (for computing the strain-rate profile) ---> MEaSUREs program, Howat (2020)
+
+
+The codes also expect a particular folder structure (mostly to read the data from an input folder or save the results into an output one) so, if any path issues arise, either create the missing folder (the easiest) or repath it for your purpose.

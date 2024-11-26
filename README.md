@@ -15,6 +15,11 @@ Arrizabalaga-Iriarte J, Lejonagoitia-Garmendia L, Hvidberg CS, Grinsted A, Rathm
 
 In the numerical experiments that follow, we solved the coupled density, momentum, and thermal problem using *FEniCS* (Logg and others, 2012), relying on Newton's method to solve nonlinearities. For reasons explained in the article, the ice-stream scenario is not thermally coupled, but the mechanical problem is solved using the same method. The Jacobian of the residual forms (required for Newton iterations) were calculated using the unified form language (UFL) (Alnaes and others, 2015), used by *FEniCS* to specify weak forms of PDEs, which supports automatic symbolic differentiation. All weak forms are presented in Appendix A. For our two-dimensional experiments, meshes were constructed using *gmsh* (Geuzaine and Remacle, 2009) and updated between time-steps to evolve both interior and exterior free-surface boundary.
 
+Here we provide the sample codes for the main analyses in this study:
+- Revisit the model's calibration by solving the 1D firn densification problem for several values of *k* and compute the RMSE with respect to the reference density measurements. Repeating this analysis for the six Greenlandic sites in our study
+- Reproduce the transient collapse of a Greenlandic firn tunnel as a cross-section model. The simulation is based on the tunnel built at the NEEM drilling site during the 2012 campaign by setting the initial dimensions and surface temperatures to the ones measured. The results are then compared to the collapse measurements taken during the two-year-long experiment
+- Compute the densification (and, thus, surface elevation and Bubble Close-Off depth) predictions for a transect across the North-East Greenland Ice Stream (NEGIS) to see if the rheology can explain the increased densification rate and varying BCO depth observed on the shear margins
+
 
 All the datasets used as reference and initial and boundary conditions are publicly available, but they need to be downloaded from their owners and properly pathed before running these codes.
 
